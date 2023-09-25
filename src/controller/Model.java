@@ -10,5 +10,5 @@ package controller;
  * @author irati
  */
 public interface Model {
-    
+    public String getGreeting();
 }

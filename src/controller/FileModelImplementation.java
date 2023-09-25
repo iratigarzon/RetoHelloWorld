@@ -5,10 +5,20 @@
  */
 package controller;
 
+import java.util.ResourceBundle;
+
 /**
  *
  * @author irati
  */
-public class FileModelImplementation {
-    
+public class FileModelImplementation implements Model {
+
+    private ResourceBundle configFile;
+
+    @Override
+    public String getGreeting() {
+        configFile = ResourceBundle.getBundle("controller.Config");
+        return configFile.getString("MESSAGE");
+    }
+
 }

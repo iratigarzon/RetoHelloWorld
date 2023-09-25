@@ -9,6 +9,11 @@ package view;
  *
  * @author irati
  */
-public class WindowViewImplementation {
+public class WindowViewImplementation implements View {
+
+    @Override
+    public void showGreeting(String message) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

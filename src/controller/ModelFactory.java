@@ -1,14 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 /**
  *
- * @author irati
+ * @author alexs, iratig
  */
 public class ModelFactory {
-    
+
+    /**
+     * Instances the model.
+     *
+     * @return returns the file implementation.
+     */
+
+
+    public static Model getModel(String type) {
+        switch (type) {
+            case "1":
+                return new FileModelImplementation();
+            case "2":
+                return new DBModelImplementation();
+        }
+        return null;
+    }
 }

@@ -5,10 +5,27 @@
  */
 package controller;
 
+import view.View;
+
 /**
  *
  * @author irati
  */
 public class Controller {
-    
+
+    View view;
+    Model model;
+
+    /**
+     * Manages the communication between model and view.
+     *
+     * @param view
+     * @param model
+     */
+    /**
+     * Gets the message from the data side and calls for show function.
+     */
+    public void run(View view, Model model) {
+        view.showGreeting(model.getGreeting());
+    }
 }

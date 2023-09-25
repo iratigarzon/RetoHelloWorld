@@ -9,6 +9,11 @@ package view;
  *
  * @author irati
  */
-public class View {
-    
+public interface View {
+     
+    /**
+     * show greeting.
+     * @param message   Contains the greeting that will be shown.
+     */
+    public void showGreeting(String message);
 }

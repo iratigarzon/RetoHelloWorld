@@ -10,5 +10,14 @@ package view;
  * @author irati
  */
 public class ViewFactory {
-    
+     public static View getView(String type) {
+        switch (type) {
+            case "1":
+                return new TextViewImplementation();
+            case "2":
+                return new WindowViewImplementation();
+               
+        }
+        return null;
+    }
 }
