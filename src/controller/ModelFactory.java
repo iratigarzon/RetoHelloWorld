@@ -15,9 +15,9 @@ public class ModelFactory {
 
     public static Model getModel(String type) {
         switch (type) {
-            case "1":
+            case "FILE":
                 return new FileModelImplementation();
-            case "2":
+            case "DB":
                 return new DBModelImplementation();
         }
         return null;

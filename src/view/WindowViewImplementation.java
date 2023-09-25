@@ -5,15 +5,34 @@
  */
 package view;
 
+import static javafx.application.Application.launch;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 /**
  *
  * @author irati
  */
-public class WindowViewImplementation implements View {
+public class WindowViewImplementation extends javafx.application.Application implements View{
+     private static String messag;
 
     @Override
     public void showGreeting(String message) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        messag = message;
+        launch();
     }
     
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view.fxml"));
+        Parent root = loader.load();
+        FXMLController viewController = loader.getController();
+        viewController.setMessage(messag);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
 }

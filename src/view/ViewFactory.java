@@ -12,9 +12,9 @@ package view;
 public class ViewFactory {
      public static View getView(String type) {
         switch (type) {
-            case "1":
+            case "TEXT":
                 return new TextViewImplementation();
-            case "2":
+            case "WINDOW":
                 return new WindowViewImplementation();
                
         }
