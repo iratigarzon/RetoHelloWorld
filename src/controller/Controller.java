@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import view.View;
 
 /**
  *
- * @author irati
+ * @author Irati Garzón, Alex Salinero
  */
 public class Controller {
 
@@ -18,12 +13,8 @@ public class Controller {
 
     /**
      * Manages the communication between model and view.
-     *
-     * @param view
-     * @param model
-     */
-    /**
-     * Gets the message from the data side and calls for show function.
+     * @param view Receives a View object.
+     * @param model Receives a Model object.
      */
     public void run(View view, Model model) {
         view.showGreeting(model.getGreeting());
