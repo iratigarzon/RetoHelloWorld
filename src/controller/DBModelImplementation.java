@@ -8,8 +8,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Irati Garzón
+ * DBModelImplementation is an implementation of the Model interface that interacts
+ * with a database to retrieve a greeting message.
+ * @author Irati Garzón, Olivia Salinero 
  */
 public class DBModelImplementation implements Model {
 
@@ -23,16 +24,17 @@ public class DBModelImplementation implements Model {
      * @return returns the string found in the config file.
      */
     @Override
-    public String getGreeting() {
+    public String getGreeting(){
         String greeting = null;
         final String SelectGreeting = "Select message FROM message";
 
         try {
+            //Opens the connection
             connection = new ConnectionOpenClose();
             con = connection.openConnection();
+            //Prepare the statement
             stmt = con.prepareStatement(SelectGreeting);
             rs = stmt.executeQuery();
-
             while (rs.next()) {
                 greeting = rs.getString(1);
             }
