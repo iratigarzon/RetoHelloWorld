@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author irati
+ * @author Irati Garzón
  */
 class ConnectionOpenClose {
 
@@ -16,10 +16,12 @@ class ConnectionOpenClose {
     private String url;
     private String user;
     private String pass;
-
-    // CONSTRUCTOR
-    // Method to open connection with MySQL, gets the info from config.properties file, 
-    // receives an int to choose the user to connect with
+    
+    /**
+     * CONSTRUCTOR
+     * Method to open connection with MySQL, gets the info from config.properties file,
+     * receives an int to choose the user to connect with
+     */
     public ConnectionOpenClose() {
         configFile = ResourceBundle.getBundle("controller.Config");
         url = configFile.getString("URL");
@@ -27,7 +29,11 @@ class ConnectionOpenClose {
         pass = configFile.getString("PASSWORD");
     }
 
-    // Method that opens the connection with MySQL
+    /**
+     * Method that opens the connection with MySQL
+     * @return                 Returns the connection with MySQL
+     * @throws SQLException 
+     */
     public Connection openConnection() throws SQLException {
         Connection con = null;
         try {
@@ -38,7 +44,12 @@ class ConnectionOpenClose {
         return con;
     }
 
-    // Method that closes the connection with MySQL
+    /**
+     * Method that closes the connection with MySQL
+     * @param stmt          
+     * @param con           MySQL connection parameter.
+     * @throws SQLException 
+     */
     public void closeConnection(PreparedStatement stmt, Connection con) throws SQLException {
         if (stmt != null) {
             stmt.close();

@@ -1,11 +1,9 @@
-
 package controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,9 +20,8 @@ public class DBModelImplementation implements Model {
     private ResultSet rs;
 
     /**
-     * Retrieves a greeting message from the database.
-     *
-     * @return The greeting message obtained from the database.
+     * Calls for message string form config file.
+     * @return returns the string found in the config file.
      */
     @Override
     public String getGreeting(){

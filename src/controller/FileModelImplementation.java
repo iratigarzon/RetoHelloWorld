@@ -1,20 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.util.ResourceBundle;
 
 /**
  *
- * @author irati
+ * @author Irati Garzón
  */
 public class FileModelImplementation implements Model {
 
     private ResourceBundle configFile;
-
+    
+    /**
+     * Gets the greeting from the file.
+     * @return Returns String with the message in the file.
+     */
     @Override
     public String getGreeting() {
         configFile = ResourceBundle.getBundle("controller.Config");

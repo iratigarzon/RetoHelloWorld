@@ -1,15 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 /**
  *
- * @author irati
+ * @author Irati Garzón, Alex Salinero
  */
 public class ViewFactory {
+    /**
+     * Instances the view.
+     * @param type Receives the type of implementation wanted form the file.
+     * @return     Returns the implementation.
+     */
      public static View getView(String type) {
         switch (type) {
             case "TEXT":
