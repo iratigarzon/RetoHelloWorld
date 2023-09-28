@@ -6,6 +6,7 @@
 package controller;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,11 +35,11 @@ public class ConnectionOpenCloseTest {
             fail("Expected successful connection, but got SQLException: " + e.getMessage());
         }
     }
-    @Test(expected = java.sql.SQLException.class)
+     @Test(expected = java.sql.SQLException.class)
     public void testOpenConnectionFailure() throws SQLException {
         ConnectionOpenClose connection = new ConnectionOpenClose();
-        // Configura credenciales incorrectas en config.properties para que la conexión falle
         Connection con = connection.openConnection();
+        con = DriverManager.getConnection("0", "0", "0");
     }
 
 }

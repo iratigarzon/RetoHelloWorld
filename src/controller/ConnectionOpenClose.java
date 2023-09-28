@@ -33,8 +33,7 @@ class ConnectionOpenClose {
         try {
             con = DriverManager.getConnection(url, user, pass);
         } catch (SQLException e) {
-
-            e.printStackTrace();
+            throw new SQLException(e);
         }
         return con;
     }
