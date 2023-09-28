@@ -4,6 +4,7 @@ import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -35,6 +36,8 @@ public class WindowViewImplementation extends javafx.application.Application imp
         FXMLController viewController = loader.getController();
         viewController.setMessage(messag);
         Scene scene = new Scene(root);
+        primaryStage.getIcons().add(new Image("/image/macaron.png"));
+        primaryStage.setTitle("Hello World");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
