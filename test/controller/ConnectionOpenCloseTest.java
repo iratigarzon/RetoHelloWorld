@@ -1,29 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Before;
 
 /**
- *
- * @author irati
+ * Test for the ConnectionOpenClose.
+ * @author Irati Garzón, Olivia Salinero
  */
 public class ConnectionOpenCloseTest {
 
-
-    public ConnectionOpenCloseTest() {
-    }
-
-
+    /**
+     * Tests if the connection to the DB opens and closes properly.
+     */
    @Test
     public void testOpenCloseConnection() {
         try {
@@ -35,6 +26,10 @@ public class ConnectionOpenCloseTest {
             fail("Expected successful connection, but got SQLException: " + e.getMessage());
         }
     }
+    /**
+     * Provokes an SQLException.
+     * @throws SQLException when connection parameters are incorrect.
+     */
      @Test(expected = java.sql.SQLException.class)
     public void testOpenConnectionFailure() throws SQLException {
         ConnectionOpenClose connection = new ConnectionOpenClose();
